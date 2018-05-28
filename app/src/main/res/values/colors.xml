@@ -213,6 +213,7 @@
         <!-- y -->
 
         <color name="YellowGreen">#9ACD32</color>
-        <!-- z -->
+    <color name="BackGrey">#0b0b0b</color>
+    <!-- z -->
 
 </resources>

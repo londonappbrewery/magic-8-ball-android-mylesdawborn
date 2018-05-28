@@ -1,6 +1,7 @@
 package com.londonappbrewery.magiceightball;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
@@ -15,15 +16,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 import java.util.Random;
-
+import android.os.Vibrator;
 import com.squareup.seismic.ShakeDetector;
 
-import static android.view.Gravity.CENTER;
-import static android.view.ViewGroup.LayoutParams;
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 public class MainActivity extends AppCompatActivity implements ShakeDetector.Listener {
 
@@ -86,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements ShakeDetector.Lis
     @Override
     public void hearShake() {
         final ImageView answerTriangle = findViewById(R.id.imageView);
-        final TypedArray idiomImage = getResources().obtainTypedArray(R.array.apptour);
+        @SuppressLint("Recycle") final TypedArray idiomImage = getResources().obtainTypedArray(R.array.apptour);
         final Random rand = new Random();
         final int rndInt = rand.nextInt(idiomImage.length());
         final int resID = idiomImage.getResourceId(rndInt, 0);
@@ -94,6 +91,11 @@ public class MainActivity extends AppCompatActivity implements ShakeDetector.Lis
         flashShake.setVisibility(View.GONE);
         answerTriangle.setVisibility(View.VISIBLE);
         answerTriangle.setImageResource(resID);
+        // Get instance of Vibrator from current Context
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 400 milliseconds
+        v.vibrate(400);
+
         sd.stop();
 
         new CountDownTimer(3000, 1000) {

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/BackGrey">
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
         android:paddingTop="20dp" />
 
     <ImageView
@@ -18,11 +18,11 @@
         android:layout_width="289dp"
         android:layout_height="278dp"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/idiom_images"
         android:paddingBottom="40dp"
         android:scaleType="fitCenter"
         android:visibility="invisible"
-        app:srcCompat="@drawable/back_drawingboard"
-        android:contentDescription="@string/idiom_images" />
+        app:srcCompat="@drawable/back_drawingboard" />
 
     <TextView
         android:id="@+id/textViewAsk"

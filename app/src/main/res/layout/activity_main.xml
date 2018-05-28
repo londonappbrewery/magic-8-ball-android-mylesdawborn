@@ -1,13 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/activity_main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    tools:context=".MainActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="289dp"
+        android:layout_height="278dp"
+        android:layout_centerInParent="true"
+        android:paddingBottom="40dp"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/back_drawingboard"
+        android:contentDescription="@string/idiom_images" />
+
+    <TextView
+        android:id="@+id/textViewAsk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/quares"
+        android:text="@string/title_question"
+        android:textAllCaps="true"
+        android:textColor="@color/OrangeRed"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewAsk2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp"
+        android:fontFamily="@font/quares"
+        android:text="@string/title_question_2"
+        android:textAllCaps="true"
+        android:textColor="@color/OrangeRed"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/flashShake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/quares"
+        android:text="SHAKE!"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
